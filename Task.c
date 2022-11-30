@@ -312,6 +312,34 @@ int main()
                                 j++;
                             }
                             printf("\n::> MT - Lines %d %d ", lineNo1, lineNo2);
+                            
+                            /**
+                             * @brief Here i is the current line which is (~a)
+                             * and lineNo1 gives is a>b and lineNo2 gives (~b)
+                             * 
+                             */
+
+                            char temporaryInput[max];
+                            temporaryInput[0] = '(';
+                            int counter = 0;
+                            int temp = 1;
+                            while(statements[i][counter+3] != '\0'){
+                                temporaryInput[temp] = statements[i][counter+2];
+                                counter++;
+                                temp++;
+                            }
+                            temporaryInput[temp] = '>';
+                            temp++;
+                            counter = 0;
+                            while(statements[lineNo2-1][counter+3] != '\0'){
+                                temporaryInput[temp] = statements[lineNo2-1][counter+2];
+                                counter++;
+                                temp++;
+                            }
+                            temporaryInput[temp] = ')';
+
+                            strcmp(temporaryInput, statements[lineNo1-1]) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+
                         }
                     }
                 }
