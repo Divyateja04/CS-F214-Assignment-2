@@ -15,7 +15,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/implies.txt", "r");
+    FILE *file = fopen("./Inputs/mt.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
@@ -286,8 +286,9 @@ int main()
                             }
                             printf("\n::> Implication Elimination - Lines %d %d ", lineNo1, lineNo2);
 
-                            strcmp(statements[lineNo1 - 1], strcat(strcat(statements[lineNo2 - 1], ">"), statements[i])) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
-
+                            char inputForStrCat[max];
+                            inputForStrCat[0] = '(';
+                            strcmp(statements[lineNo1 - 1], strcat(inputForStrCat, strcat(strcat(strcat(statements[lineNo2 - 1], ">"), statements[i]), ")"))) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
                         }
                     }
                     else if(inputLines[i][j] == 'M'){
