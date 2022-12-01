@@ -124,7 +124,7 @@ int main()
                             }
                             inputForStrCat[newStatementTracker] = ')';
                             printf("\n::> Comparing %s and %s", statements[i], inputForStrCat);
-                            mp(statements[i], inputForStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+                            strcmp(statements[i], inputForStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
                         }
                         else if (inputLines[i][j] == 'e')
                         {
