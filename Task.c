@@ -15,7 +15,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/input.txt", "r");
+    FILE *file = fopen("./Inputs/input2.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
