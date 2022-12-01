@@ -15,7 +15,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/and.txt", "r");
+    FILE *file = fopen("./Inputs/input.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
@@ -110,7 +110,21 @@ int main()
                             }
                             printf("\n::> And Introduction - Lines %d %d ", lineNo1, lineNo2);
 
-                            strcmp(statements[i], strcat(strcat(statements[lineNo1 - 1], "^"), statements[lineNo2 - 1])) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+                            char inputForStrCat[max];
+                            inputForStrCat[0] = '(';
+                            int newStatementTracker = 1;
+                            for(int m = 0; m < strlen(statements[lineNo1 - 1]); m++){
+                                inputForStrCat[newStatementTracker] = statements[lineNo1 - 1][m];
+                                newStatementTracker++;
+                            }
+                            inputForStrCat[newStatementTracker++] = '^';
+                            for(int m = 0; m < strlen(statements[lineNo2 - 1]); m++){
+                                inputForStrCat[newStatementTracker] = statements[lineNo2 - 1][m];
+                                newStatementTracker++;
+                            }
+                            inputForStrCat[newStatementTracker] = ')';
+                            printf("\n::> Comparing %s and %s", statements[i], inputForStrCat);
+                            strcmp(statements[i], inputForStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
                         }
                         else if (inputLines[i][j] == 'e')
                         {
@@ -149,7 +163,7 @@ int main()
 
                                 while (statements[i][andFinder] != '\0')
                                 {
-                                    printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
+                                    // printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
                                     if (statements[lineNo - 1][andFinder+1] != statements[i][andFinder])
                                         validity = 0;
                                     andFinder++;
@@ -287,9 +301,21 @@ int main()
                             }
                             printf("\n::> Implication Elimination - Lines %d %d ", lineNo1, lineNo2);
 
-                            char inputForStrCat[max];
-                            inputForStrCat[0] = '(';
-                            strcmp(statements[lineNo1 - 1], strcat(inputForStrCat, strcat(strcat(strcat(statements[lineNo2 - 1], ">"), statements[i]), ")"))) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+                            char inputForElStrCat[max];
+                            inputForElStrCat[0] = '(';
+                            int elNewStatementTracker = 1;
+                            for(int m = 0; m < strlen(statements[lineNo2 - 1]); m++){
+                                inputForElStrCat[elNewStatementTracker] = statements[lineNo2 - 1][m];
+                                elNewStatementTracker++;
+                            }
+                            inputForElStrCat[elNewStatementTracker++] = '>';
+                            for(int m = 0; m < strlen(statements[i]); m++){
+                                inputForElStrCat[elNewStatementTracker] = statements[i][m];
+                                elNewStatementTracker++;
+                            }
+                            inputForElStrCat[elNewStatementTracker] = ')';
+                            printf("\n::> Comparing %s and %s", statements[lineNo1 - 1], inputForElStrCat);
+                            strcmp(statements[lineNo1 - 1], inputForElStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
                         }
                     }
                     else if(inputLines[i][j] == 'M'){
