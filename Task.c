@@ -94,17 +94,10 @@ void andElimination(char inputLines[max][max], char statements[max][max], int i,
 
     printf("\n::> And Elimination - Mode %d - Line %d", eliminationMode, lineNo);
 
-    /**
-     * @brief Here lineNo-1 gives the sentence from which we are eliminating
-     * and i gives the one after elimination
-     *
-     */
+    // @brief Here lineNo-1 gives the sentence from which we are eliminating
+    // and i gives the one after elimination
     if (eliminationMode == 1)
     {
-        /**
-         * @brief 
-         *
-         */
         int andFinder = 0;
         int validity = 1;
 
@@ -349,20 +342,16 @@ int main()
     char inputLines[noOfLines][max];
     char statements[noOfLines][max];
 
-    /**
-     * @brief Getting input into the array of strings
-     *
-     */
+    // Getting input into the array of strings
     for (int i = 0; i < noOfLines; i++)
     {
         fgets(inputLines[i], max, file);
     }
 
-    /**
-     * @brief Part 1: Analyzing Input, We have 2 Possibilities
-     * If last character is P it is a premise, Otherwise it's a statement
-     *
-     */
+
+    // Part 1: Analyzing Input, We have 2 Possibilities
+    // If last character is P it is a premise, Otherwise it's a statement
+        
     for (int i = 0; i < noOfLines; i++)
     {
         // Replace every \n with \0
