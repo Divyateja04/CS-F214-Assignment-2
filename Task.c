@@ -15,7 +15,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/mt.txt", "r");
+    FILE *file = fopen("./Inputs/and.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
@@ -149,7 +149,8 @@ int main()
 
                                 while (statements[i][andFinder] != '\0')
                                 {
-                                    if (statements[lineNo - 1][andFinder] != statements[i][andFinder - 1])
+                                    printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
+                                    if (statements[lineNo - 1][andFinder+1] != statements[i][andFinder])
                                         validity = 0;
                                     andFinder++;
                                 }
@@ -226,7 +227,7 @@ int main()
 
                                 while (statements[lineNo - 1][orFinder] != '\0')
                                 {
-                                    if (statements[i][orFinder] != statements[lineNo - 1][orFinder - 1])
+                                    if (statements[i][orFinder+1] != statements[lineNo - 1][orFinder])
                                         validity = 0;
                                     orFinder++;
                                 }
