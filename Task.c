@@ -11,13 +11,13 @@
 
 /**
  * @brief AND INTRODUCTION
- * 
+ *
  * @param inputLines is the inputLine exactly
  * @param statements is the statement i.e. without the rule
  * @param i line number
  * @param j character number
  */
-void andIntroduction(char inputLines[max][max], char statements[max][max], int i, int j)
+int andIntroduction(char inputLines[max][max], char statements[max][max], int i, int j)
 {
     // Go forward to find the line numbers
     j += 2;
@@ -53,7 +53,7 @@ void andIntroduction(char inputLines[max][max], char statements[max][max], int i
     }
     inputForStrCat[newStatementTracker] = ')';
     printf("\n::> Comparing %s and %s", statements[i], inputForStrCat);
-    strcmp(statements[i], inputForStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+    return strcmp(statements[i], inputForStrCat) == 0;
 }
 
 /**
@@ -64,7 +64,7 @@ void andIntroduction(char inputLines[max][max], char statements[max][max], int i
  * and keep comparing i.e. if we have (a^b) and we get b(this is i)
  * using and elimination we compare from start till the
  * smaller string goes to the start
- * 
+ *
  * Otherwise, case 2
  * Here we go until the current line ends
  * and keep comparing i.e. if we have (a^b) and we get a
@@ -76,7 +76,7 @@ void andIntroduction(char inputLines[max][max], char statements[max][max], int i
  * @param i line number
  * @param j character number
  */
-void andElimination(char inputLines[max][max], char statements[max][max], int i, int j)
+int andElimination(char inputLines[max][max], char statements[max][max], int i, int j)
 {
     j++;
     // Find if it's e1 or e2
@@ -109,11 +109,11 @@ void andElimination(char inputLines[max][max], char statements[max][max], int i,
             andFinder++;
         }
 
-        validity == 1 ? printf("--> VALID\n") : printf("--> INVALID\n");
+        return validity == 1;
     }
     else if (eliminationMode == 2)
     {
-        
+
         int andFinderForEliminatedString = strlen(statements[i]) - 1;
         int andFinderForFullString = strlen(statements[lineNo - 1]) - 2;
 
@@ -127,7 +127,7 @@ void andElimination(char inputLines[max][max], char statements[max][max], int i,
             andFinderForFullString--;
         }
 
-        validity == 1 ? printf("--> VALID\n") : printf("--> INVALID\n");
+        return validity == 1;
     }
 }
 
@@ -135,24 +135,24 @@ void andElimination(char inputLines[max][max], char statements[max][max], int i,
  * @brief OR INTRODUCTION
  * In or introduction also we have 2 modes, one for left introduction
  * and one for right introduction
- * 
- * If mode is 1, Here we go until the current line ends 
- * and keep comparing i.e. if we have a and we want (avb) 
- * using or introduction we compare from start till the 
+ *
+ * If mode is 1, Here we go until the current line ends
+ * and keep comparing i.e. if we have a and we want (avb)
+ * using or introduction we compare from start till the
  * smaller string ends
- * 
+ *
  * If mode is 2
- * Here we loop until the bigger line goes to the start 
- * and keep comparing i.e. if we have b and (avb)(this is i) 
- * using and elimination we compare from start till the 
+ * Here we loop until the bigger line goes to the start
+ * and keep comparing i.e. if we have b and (avb)(this is i)
+ * using and elimination we compare from start till the
  * smaller string goes to the start
- * 
+ *
  * @param inputLines is the inputLine exactly
  * @param statements is the statement i.e. without the rule
  * @param i line number
  * @param j character number
  */
-void orIntroduction(char inputLines[max][max], char statements[max][max], int i, int j)
+int orIntroduction(char inputLines[max][max], char statements[max][max], int i, int j)
 {
     j++;
     if (inputLines[i][j] == 'i')
@@ -185,7 +185,7 @@ void orIntroduction(char inputLines[max][max], char statements[max][max], int i,
                 orFinder++;
             }
 
-            validity == 1 ? printf("--> VALID\n") : printf("--> INVALID\n");
+            return validity == 1;
         }
         else if (introductionMode == 2)
         {
@@ -202,7 +202,7 @@ void orIntroduction(char inputLines[max][max], char statements[max][max], int i,
                 orFinderForFullString--;
             }
 
-            validity == 1 ? printf("--> VALID\n") : printf("--> INVALID\n");
+            return validity == 1;
         }
     }
 }
@@ -212,13 +212,13 @@ void orIntroduction(char inputLines[max][max], char statements[max][max], int i,
  * Here if i is the current line which is a
  * and lineNo1 gives is (a>b) and lineNo2 gives b
  * We make the string (a>b) and compare it with (a>b)
- * 
+ *
  * @param inputLines is the inputLine exactly
  * @param statements is the statement i.e. without the rule
  * @param i line number
  * @param j character number
  */
-void implicationElimination(char inputLines[max][max], char statements[max][max], int i, int j)
+int implicationElimination(char inputLines[max][max], char statements[max][max], int i, int j)
 {
     j++;
     if (inputLines[i][j] == 'e')
@@ -257,7 +257,7 @@ void implicationElimination(char inputLines[max][max], char statements[max][max]
         }
         inputForElStrCat[elNewStatementTracker] = ')';
         printf("\n::> Comparing %s and %s", statements[lineNo1 - 1], inputForElStrCat);
-        strcmp(statements[lineNo1 - 1], inputForElStrCat) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+        return strcmp(statements[lineNo1 - 1], inputForElStrCat) == 0;
     }
 }
 
@@ -265,13 +265,13 @@ void implicationElimination(char inputLines[max][max], char statements[max][max]
  * @brief MODUS TOLLENS
  * Here if i is the current line which is (~a)
  * and lineNo1 gives is a>b and lineNo2 gives (~b)
- * 
+ *
  * @param inputLines is the inputLine exactly
  * @param statements is the statement i.e. without the rule
  * @param i line number
  * @param j character number
  */
-void MT(char inputLines[max][max], char statements[max][max], int i, int j)
+int MT(char inputLines[max][max], char statements[max][max], int i, int j)
 {
     j++;
     if (inputLines[i][j] == 'T')
@@ -315,7 +315,7 @@ void MT(char inputLines[max][max], char statements[max][max], int i, int j)
         }
         temporaryInput[temp] = ')';
 
-        strcmp(temporaryInput, statements[lineNo1 - 1]) == 0 ? printf("--> VALID\n") : printf("--> INVALID\n");
+        return strcmp(temporaryInput, statements[lineNo1 - 1]) == 0;
     }
 }
 
@@ -325,7 +325,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/input.txt", "r");
+    FILE *file = fopen("./Inputs/and.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
@@ -348,10 +348,11 @@ int main()
         fgets(inputLines[i], max, file);
     }
 
-
     // Part 1: Analyzing Input, We have 2 Possibilities
     // If last character is P it is a premise, Otherwise it's a statement
-        
+
+    int proofValidity = 1;
+
     for (int i = 0; i < noOfLines; i++)
     {
         // Replace every \n with \0
@@ -377,13 +378,12 @@ int main()
             printf("\n#%d: Found a Statement %s", i + 1, inputLines[i]);
 
             int j = 0;
-            int slashes = 0;
 
             // Here we are waiting until the end of the sentence
             while (inputLines[i][j] != '\0')
             {
                 // Once it reaches the first slash
-                if (inputLines[i][j] == '/' && slashes == 0)
+                if (inputLines[i][j] == '/')
                 {
                     j++; // Move forward and skip one character
 
@@ -393,7 +393,15 @@ int main()
                         // We check if it's Introduction or Elimination
                         if (inputLines[i][j] == 'i')
                         {
-                            andIntroduction(inputLines, statements, i, j);
+                            if (andIntroduction(inputLines, statements, i, j) == 1)
+                            {
+                                printf("--> VALID");
+                            }
+                            else
+                            {
+                                printf("--> INVALID");
+                                proofValidity = 0;
+                            }
                         }
                         else if (inputLines[i][j] == 'e')
                         {
@@ -402,18 +410,50 @@ int main()
                     }
                     else if (inputLines[i][j] == 'v')
                     {
-                        orIntroduction(inputLines, statements, i, j);
+                        if (orIntroduction(inputLines, statements, i, j) == 1)
+                        {
+                            printf("--> VALID");
+                        }
+                        else
+                        {
+                            printf("--> INVALID");
+                            proofValidity = 0;
+                        }
                     }
                     else if (inputLines[i][j] == '>')
                     {
-                        implicationElimination(inputLines, statements, i, j);
+                        if (implicationElimination(inputLines, statements, i, j) == 1)
+                        {
+                            printf("--> VALID");
+                        }
+                        else
+                        {
+                            printf("--> INVALID");
+                            proofValidity = 0;
+                        }
                     }
                     else if (inputLines[i][j] == 'M')
                     {
-                        MT(inputLines, statements, i, j);
+                        if (MT(inputLines, statements, i, j) == 1)
+                        {
+                            printf("--> VALID");
+                        }
+                        else
+                        {
+                            printf("--> INVALID");
+                            proofValidity = 0;
+                        }
                     }
                 }
                 j++;
+            }
+            if (proofValidity == 1)
+            {
+                printf("\n\nTHE PROOF IS VALID");
+            }
+            else
+            {
+                printf("\n\nTHE PROOF IS INVALID");
             }
         }
     }
