@@ -25,9 +25,16 @@
 var NAVTREE =
 [
   [ "CS-F214-Assignment-2", "index.html", [
-    [ "CS-F214-Assignment-2", "md__r_e_a_d_m_e.html", [
-      [ "Introduction", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-      [ "Our Team", "md__r_e_a_d_m_e.html#autotoc_md2", null ]
+    [ "Introduction", "index.html#autotoc_md9", null ],
+    [ "Our Team", "index.html#autotoc_md10", null ],
+    [ "Sample Input/Outputs", "md__inputs.html", [
+      [ "Input 1", "md__inputs.html#autotoc_md1", null ],
+      [ "Input 2", "md__inputs.html#autotoc_md2", null ],
+      [ "Input 3", "md__inputs.html#autotoc_md3", null ],
+      [ "Input 4", "md__inputs.html#autotoc_md4", null ],
+      [ "Input 5", "md__inputs.html#autotoc_md5", null ],
+      [ "Input 6", "md__inputs.html#autotoc_md6", null ],
+      [ "Invalid Inputs", "md__inputs.html#autotoc_md7", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],

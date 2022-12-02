@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['implicationelimination_0',['implicationElimination',['../_task_8c.html#a787c98bb96169c6fe8ee9728a33fa187',1,'Task.c']]]
+  ['implicationelimination_0',['implicationElimination',['../_task_8c.html#a330ae2ed73e6946e15a1f955b3e8374f',1,'Task.c']]],
+  ['inputs_2emd_1',['Inputs.md',['../_inputs_8md.html',1,'']]]
 ];
