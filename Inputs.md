@@ -68,6 +68,7 @@ c/^e2/3
 ((a^c)>b)/^e1/1
 (~(a^c))/MT/3/2
 ```
+![image](https://user-images.githubusercontent.com/28446977/205476162-7a612ce9-16b3-4818-bb85-855b4b534ad6.png)
 
 ## Input 8
 ```
@@ -79,6 +80,7 @@ q/>e/2/1
 (q>r)/>e/3/1
 r/>e/5/4
 ```
+![image](https://user-images.githubusercontent.com/28446977/205476156-830e4c1f-7ba1-4ca5-b90d-c71ba938d4ab.png)
 
 # Invalid Inputs
 ```
