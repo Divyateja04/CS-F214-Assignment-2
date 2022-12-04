@@ -52,6 +52,7 @@ int andIntroduction(char inputLines[max][max], char statements[max][max], int i,
         newStatementTracker++;
     }
     inputForStrCat[newStatementTracker] = ')';
+    inputForStrCat[++newStatementTracker] = '\0';
     printf("\n::> Comparing %s and %s", statements[i], inputForStrCat);
     return strcmp(statements[i], inputForStrCat) == 0;
 }
@@ -256,6 +257,7 @@ int implicationElimination(char inputLines[max][max], char statements[max][max],
             elNewStatementTracker++;
         }
         inputForElStrCat[elNewStatementTracker] = ')';
+        inputForElStrCat[++elNewStatementTracker] = '\0';
         printf("\n::> Comparing %s and %s", statements[lineNo1 - 1], inputForElStrCat);
         return strcmp(statements[lineNo1 - 1], inputForElStrCat) == 0;
     }
@@ -314,6 +316,9 @@ int MT(char inputLines[max][max], char statements[max][max], int i, int j)
             temp++;
         }
         temporaryInput[temp] = ')';
+        temporaryInput[++temp] = '\0';
+
+        printf("Comparing %s and %s", temporaryInput, statements[lineNo1 - 1]);
 
         return strcmp(temporaryInput, statements[lineNo1 - 1]) == 0;
     }
@@ -325,7 +330,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/and.txt", "r");
+    FILE *file = fopen("./Inputs/input3.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
@@ -395,11 +400,11 @@ int main()
                         {
                             if (andIntroduction(inputLines, statements, i, j) == 1)
                             {
-                                printf("--> VALID");
+                                printf("--> VALID\n");
                             }
                             else
                             {
-                                printf("--> INVALID");
+                                printf("--> INVALID\n");
                                 proofValidity = 0;
                             }
                         }
@@ -424,11 +429,11 @@ int main()
                     {
                         if (implicationElimination(inputLines, statements, i, j) == 1)
                         {
-                            printf("--> VALID");
+                            printf("--> VALID\n");
                         }
                         else
                         {
-                            printf("--> INVALID");
+                            printf("--> INVALID\n");
                             proofValidity = 0;
                         }
                     }
@@ -436,25 +441,25 @@ int main()
                     {
                         if (MT(inputLines, statements, i, j) == 1)
                         {
-                            printf("--> VALID");
+                            printf("--> VALID\n");
                         }
                         else
                         {
-                            printf("--> INVALID");
+                            printf("--> INVALID\n");
                             proofValidity = 0;
                         }
                     }
                 }
                 j++;
             }
-            if (proofValidity == 1)
-            {
-                printf("\n\nTHE PROOF IS VALID");
-            }
-            else
-            {
-                printf("\n\nTHE PROOF IS INVALID");
-            }
         }
+    }
+    if (proofValidity == 1)
+    {
+        printf("\n\nTHE PROOF IS VALID");
+    }
+    else
+    {
+        printf("\n\nTHE PROOF IS INVALID");
     }
 }
