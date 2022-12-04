@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> </p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Introduction</h1>
 <p >This repository is for Logic in Computer Science Assignment 2 at BITS Pilani Hyderabad Campus. <br  />
  The task is to verify if a proof is correct or not. Given that the proof has: <br  />
@@ -104,7 +104,7 @@ Introduction</h1>
 <li>IMPLIES Elimination</li>
 <li>MT</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Our Team</h1>
 <ol type="1">
 <li>Divyateja Pasupuleti- 2021A7PS0075H <br  />
@@ -113,8 +113,23 @@ Our Team</h1>
 </li>
 <li>Harsh Rachalwar- 2021A7PS0200H <br  />
 </li>
-<li>Manan Gupta- 2021A7PS2091H </li>
+<li>Manan Gupta- 2021A7PS2091H</li>
 </ol>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Algorithm</h1>
+<p >The first step was analyzing Input, We have 2 Possibilities. If last character is P it is a premise, Otherwise it's a statement</p>
+<h2><a class="anchor" id="autotoc_md14"></a>
+AND ELIMINATION</h2>
+<p >Here also we have two cases If it's and elimination 1, Here we loop until the bigger line goes to the start and keep comparing i.e. if we have (a^b) and we get b(this is i) using and elimination we compare from start till the smaller string goes to the start Otherwise, case 2Here we go until the current line ends and keep comparing i.e. if we have (a^b) and we get a using and elimination we compare from start till the smaller string ends</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+OR INTRODUCTION</h2>
+<p >In or introduction also we have 2 modes, one for left introduction and one for right introduction If mode is 1, Here we go until the current line ends and keep comparing i.e. if we have a and we want (avb) using or introduction we compare from start till the smaller string ends If mode is 2 Here we loop until the bigger line goes to the start and keep comparing i.e. if we have b and (avb)(this is i) using and elimination we compare from start till the smaller string goes to the start</p>
+<h2><a class="anchor" id="autotoc_md16"></a>
+IMPLICATION ELIMINATION</h2>
+<p >Here if i is the current line which is a and lineNo1 gives is (a&gt;b) and lineNo2 gives b We make the string (a&gt;b) and compare it with (a&gt;b)</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+MODUS TOLLENS</h2>
+<p >Here if i is the current line which is (~a) and lineNo1 gives is a&gt;b and lineNo2 gives (~b) </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
