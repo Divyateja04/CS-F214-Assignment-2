@@ -38,7 +38,7 @@ c/^e1/2
 k/>e/3/5
 (a^b)/>e/5/8
 ```
-![image](https://user-images.githubusercontent.com/28446977/205241441-e474b65b-9369-49a9-9bd9-99deb762c15d.png)
+![image](https://user-images.githubusercontent.com/28446977/205951249-681d4d3b-e3e2-48ea-a36f-b6f05e144dc0.png)
 
 ## Input 5
 ```
