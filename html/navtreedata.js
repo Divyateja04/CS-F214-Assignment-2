@@ -29,9 +29,9 @@ var NAVTREE =
     [ "Our Team", "index.html#autotoc_md12", null ],
     [ "Algorithm", "index.html#autotoc_md13", [
       [ "AND ELIMINATION", "index.html#autotoc_md14", null ],
-      [ "OR INTRODUCTION", "index.html#autotoc_md15", null ],
-      [ "IMPLICATION ELIMINATION", "index.html#autotoc_md16", null ],
-      [ "MODUS TOLLENS", "index.html#autotoc_md17", null ]
+      [ "OR INTRODUCTION", "index.html#autotoc_md16", null ],
+      [ "IMPLICATION ELIMINATION", "index.html#autotoc_md18", null ],
+      [ "MODUS TOLLENS", "index.html#autotoc_md20", null ]
     ] ],
     [ "Sample Input/Outputs", "md__inputs.html", [
       [ "Input 1", "md__inputs.html#autotoc_md1", null ],
