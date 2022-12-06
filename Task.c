@@ -104,7 +104,7 @@ int andElimination(char inputLines[max][max], char statements[max][max], int i, 
 
         while (statements[i][andFinder] != '\0')
         {
-            // printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
+            printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
             if (statements[lineNo - 1][andFinder + 1] != statements[i][andFinder])
                 validity = 0;
             andFinder++;
@@ -166,6 +166,7 @@ int orIntroduction(char inputLines[max][max], char statements[max][max], int i, 
         j += 2;
 
         int lineNo = 0;
+        // Convert 1 in char to 1 in int
         while (((int)inputLines[i][j]) > 48 && ((int)inputLines[i][j]) < 58)
         {
             lineNo = lineNo * 10 + ((int)(inputLines[i][j])) - 48;
@@ -330,7 +331,7 @@ int main()
      * @brief Create a file pointer to open the text file
      *
      */
-    FILE *file = fopen("./Inputs/andMt.txt", "r");
+    FILE *file = fopen("./Inputs/and.txt", "r");
 
     /**
      * @brief Take a constant to take care of number of lines of input
