@@ -17,7 +17,7 @@ The task is to verify if a proof is correct or not. Given that the proof has:
 4. Manan Gupta- 2021A7PS2091H
 
 ## Algorithm
-The first step was analyzing Input, We have 2 Possibilities. If last character is P it is a premise, Otherwise it's a statement.
+WE went over a lot of ideas to make this code and we thought of using trees, recursive functions etc. but judging by the initial conditions given to us, we thought we can also use String Comparision. The first step was analyzing Input, We have 2 Possibilities for each line. If last character is P it is a premise, Otherwise it's a statement.
 
 ### AND ELIMINATION
 Here we have two cases:
