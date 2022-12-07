@@ -49,6 +49,7 @@ By default brackets are added while comparing since we always know > will be ins
 Here if i is the current line which is "(~a)" and lineNo1 gives is a>b and lineNo2 gives "(~b)"
 We compare using "a" and "b" by removing both the negations from each of those terms and compare it with the actual statement "(a>b)"
 
-Future Prospects
+## Future Prospects
 
-We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future
+We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future
+We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity
