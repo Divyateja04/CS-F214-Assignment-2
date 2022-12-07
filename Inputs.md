@@ -28,20 +28,6 @@
 
 ## Input 4
 ```
-8
-a/P
-(c^d)/P
-((c^a)>k)/P
-(k>(a^b))/P
-c/^e1/2
-(c^a)/^i/5/1
-k/>e/3/5
-(a^b)/>e/5/8
-```
-![image](https://user-images.githubusercontent.com/28446977/205951249-681d4d3b-e3e2-48ea-a36f-b6f05e144dc0.png)
-
-## Input 5
-```
 3
 ((a^b)>c)/P
 (a^b)/P
@@ -49,7 +35,7 @@ c/>e/1/2
 ```
 ![image](https://user-images.githubusercontent.com/28446977/205241494-e9103e40-1942-4ffe-ae0c-355cfe17eda4.png)
 
-## Input 6
+## Input 5
 ```
 5
 e/P
@@ -60,7 +46,7 @@ c/^e2/3
 ```
 ![image](https://user-images.githubusercontent.com/28446977/205241549-56f8f51c-0e1c-4936-87ff-1102d171c658.png)
 
-## Input 7
+## Input 6
 ```
 4
 (((a^c)>b)^c)/P
@@ -70,7 +56,7 @@ c/^e2/3
 ```
 ![image](https://user-images.githubusercontent.com/28446977/205476162-7a612ce9-16b3-4818-bb85-855b4b534ad6.png)
 
-## Input 8
+## Input 7
 ```
 7
 p/P
@@ -82,6 +68,19 @@ r/>e/5/4
 ```
 ![image](https://user-images.githubusercontent.com/28446977/205476156-830e4c1f-7ba1-4ca5-b90d-c71ba938d4ab.png)
 
+## Input 8
+```
+8
+a/P
+(c^d)/P
+((c^a)>k)/P
+(k>(a^b))/P
+c/^e1/2
+(c^a)/^i/5/1
+k/>e/3/6
+(a^b)/>e/4/7
+```
+
 # Invalid Inputs
 ```
 5
@@ -92,3 +91,16 @@ c/^e2/3
 (cve)/^i/4/1
 ```
 ![image](https://user-images.githubusercontent.com/28446977/205241663-2a9aba9a-cc1c-499f-93bc-ab671936236b.png)
+
+```
+8
+a/P
+(c^d)/P
+((c^a)>k)/P
+(k>(a^b))/P
+c/^e1/2
+(c^a)/^i/5/1
+k/>e/3/5
+(a^b)/>e/5/8
+```
+![image](https://user-images.githubusercontent.com/28446977/205951249-681d4d3b-e3e2-48ea-a36f-b6f05e144dc0.png)

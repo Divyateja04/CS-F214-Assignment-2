@@ -104,7 +104,7 @@ int andElimination(char inputLines[max][max], char statements[max][max], int i, 
 
         while (statements[i][andFinder] != '\0')
         {
-            printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
+            // printf("\n%c %c", statements[lineNo - 1][andFinder+1], statements[i][andFinder]);
             if (statements[lineNo - 1][andFinder + 1] != statements[i][andFinder])
                 validity = 0;
             andFinder++;

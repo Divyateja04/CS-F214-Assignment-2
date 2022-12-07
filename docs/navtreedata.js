@@ -25,13 +25,13 @@
 var NAVTREE =
 [
   [ "CS-F214-Assignment-2", "index.html", [
-    [ "Introduction", "index.html#autotoc_md11", null ],
-    [ "Our Team", "index.html#autotoc_md12", null ],
-    [ "Algorithm", "index.html#autotoc_md13", [
-      [ "AND ELIMINATION", "index.html#autotoc_md14", null ],
-      [ "OR INTRODUCTION", "index.html#autotoc_md16", null ],
-      [ "IMPLICATION ELIMINATION", "index.html#autotoc_md18", null ],
-      [ "MODUS TOLLENS", "index.html#autotoc_md20", null ]
+    [ "Introduction", "index.html#autotoc_md10", null ],
+    [ "Our Team", "index.html#autotoc_md11", null ],
+    [ "Algorithm", "index.html#autotoc_md12", [
+      [ "AND ELIMINATION", "index.html#autotoc_md13", null ],
+      [ "OR INTRODUCTION", "index.html#autotoc_md15", null ],
+      [ "IMPLICATION ELIMINATION", "index.html#autotoc_md17", null ],
+      [ "MODUS TOLLENS", "index.html#autotoc_md19", null ]
     ] ],
     [ "Sample Input/Outputs", "md__inputs.html", [
       [ "Input 1", "md__inputs.html#autotoc_md1", null ],
@@ -41,8 +41,7 @@ var NAVTREE =
       [ "Input 5", "md__inputs.html#autotoc_md5", null ],
       [ "Input 6", "md__inputs.html#autotoc_md6", null ],
       [ "Input 7", "md__inputs.html#autotoc_md7", null ],
-      [ "Input 8", "md__inputs.html#autotoc_md8", null ],
-      [ "Invalid Inputs", "md__inputs.html#autotoc_md9", null ]
+      [ "Invalid Inputs", "md__inputs.html#autotoc_md8", null ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
