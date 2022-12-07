@@ -21,12 +21,12 @@ The first step was analyzing Input, We have 2 Possibilities. If last character i
 
 ### AND ELIMINATION
 Here we have two cases:
-If it's and elimination 1, i.e we have "(a^b)" and then we must have "a" in the corresponding line which comes from ^ elimination 1
-Here we loop on the statement (a^b) using a as the reference. So we start from the left-mostbracket and keep comparing until the eliminated string ends i.e. a and we verify this.
+If it's and elimination 1, i.e we have "(a^b)". We must have "a" in the corresponding line which comes from ^ elimination 1
+Here we loop on the statement "(a^b)" using a as the reference. So we start from the left-mostbracket and keep comparing until the eliminated string ends i.e. a and we verify this.
 
-Otherwise, case 2 Here we start from behind. We keep comparing until we reach the start of the smaller string.
+Otherwise, case 2 - Here we start from behind. We keep comparing until we reach the start of the smaller string.
 
-Example: We have ((a^b)^(c^d)) and (c^d) we compare (c^d) ignoring the ending bracket by looping through the string (c^d).
+Example: We have "((a^b)^(c^d))" and "(c^d)" we compare "(c^d)" ignoring the ending bracket by looping through the string "(c^d)".
 
 ---
 
@@ -38,13 +38,17 @@ For case 2, we start from behind. We keep comparing till we reach the start of s
 ---
 
 ### IMPLICATION ELIMINATION
-Here if current statement is "b" and we are getting this by using implication elimination on the statement "a>b" given a
+Here if current statement is "b" and we get this by using implication elimination on the statement "a>b" given "a".
 We generate a string "a>b "since we know the initial term and we also know the eliminated term
-Then we compare it with the term from which we eliminate i.e. (a>b)
+Then we compare it with the term from which we eliminate i.e. "(a>b)"
 By default brackets are added while comparing since we always know > will be inside brackets
 
 ---
 
 ### MODUS TOLLENS
-Here if i is the current line which is (~a) and lineNo1 gives is a>b and lineNo2 gives (~b)
-We compare using "a" and "b" by removing both the negations from each of those terms and compare it with the actual statement (a>b)
+Here if i is the current line which is "(~a)" and lineNo1 gives is a>b and lineNo2 gives "(~b)"
+We compare using "a" and "b" by removing both the negations from each of those terms and compare it with the actual statement "(a>b)"
+
+Future Prospects
+
+We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future
