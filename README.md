@@ -17,7 +17,7 @@ The task is to verify if a proof is correct or not. Given that the proof has:
 4. Manan Gupta- 2021A7PS2091H
 
 ## Algorithm
-WE went over a lot of ideas to make this code and we thought of using trees, recursive functions etc. but judging by the initial conditions given to us, we thought we can also use String Comparision. The first step was analyzing Input, we have 2 Possibilities for each line. If last character is P it is a premise, otherwise it's a statement.
+We went over a lot of ideas to make this code and we thought of using trees, recursive functions etc. but judging by the initial conditions given to us, we thought we can also use String Comparison. The first step was analyzing input, we have 2 possibilities for each line. If last character is P it is a premise, otherwise it's a statement.
 
 ### AND ELIMINATION
 Here we have two cases:
@@ -32,7 +32,7 @@ Example: We have "((a^b)^(c^d))" and "(c^d)" we compare "(c^d)" ignoring the end
 
 ### OR INTRODUCTION
 In or introduction we have 2 modes, one for left introduction and one for right introduction
-If mode is 1, Here we go until the current line ends and keep comparing i.e. if we have a and we want "(avb)" using or introduction we compare from start till the smaller string ends i.e. here we loop on "a" and go until the it ends.
+If mode is 1, here we go until the current line ends and keep comparing i.e. if we have a and we want "(avb)" using or introduction we compare from start till the smaller string ends i.e. here we loop on "a" and go until the it ends.
 For case 2, we start from behind. We keep comparing till we reach the start of smaller string.
 
 ---
@@ -51,7 +51,7 @@ We compare using "a" and "b" by removing both the negations from each of those t
 
 ## Future Prospects
 
-We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future. We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity.
+We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparison, we plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future. We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity.
 
 
 Infact, if we have to implement double negation elimination, then all we have to do is check if the inner statement matches with the one that comes after the elimination.
