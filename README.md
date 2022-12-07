@@ -39,7 +39,7 @@ For case 2, we start from behind. We keep comparing till we reach the start of s
 
 ### IMPLICATION ELIMINATION
 Here if current statement is "b" and we get this by using implication elimination on the statement "a>b" given "a".
-We generate a string "a>b "since we know the initial term and we also know the eliminated term
+We generate a string "a>b" since we know the initial term and we also know the eliminated term
 Then we compare it with the term from which we eliminate i.e. "(a>b)"
 By default brackets are added while comparing since we always know > will be inside brackets
 
