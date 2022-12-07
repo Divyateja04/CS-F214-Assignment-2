@@ -32,14 +32,14 @@ Example: We have "((a^b)^(c^d))" and "(c^d)" we compare "(c^d)" ignoring the end
 
 ### OR INTRODUCTION
 In or introduction we have 2 modes, one for left introduction and one for right introduction
-If mode is 1, Here we go until the current line ends and keep comparing i.e. if we have a and we want "(avb)" using or introduction we compare from start till the smaller string ends i.e. here we loop on "a" and go until the it ends.
+If mode is 1, Here we go until the current line ends and keep comparing i.e. if we have a and we want `(avb)` using or introduction we compare from start till the smaller string ends i.e. here we loop on `a` and go until the it ends.
 For case 2, we start from behind. We keep comparing till we reach the start of smaller string.
 
 ---
 
 ### IMPLICATION ELIMINATION
-Here if current statement is "b" and we get this by using implication elimination on the statement "a>b" given "a".
-We generate a string "a>b" since we know the initial term and we also know the eliminated term
+Here if current statement is `b` and we get this by using implication elimination on the statement `a>b` given `a`.
+We generate a string `a>b` since we know the initial term and we also know the eliminated term
 Then we compare it with the term from which we eliminate i.e. "(a>b)"
 By default brackets are added while comparing since we always know > will be inside brackets
 
@@ -51,5 +51,4 @@ We compare using "a" and "b" by removing both the negations from each of those t
 
 ## Future Prospects
 
-We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future
-We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity
+We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future. We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity
