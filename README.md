@@ -26,7 +26,7 @@ Here we loop on the statement "(a^b)" using a as the reference. So we start from
 
 Otherwise, case 2 - Here we start from behind. We keep comparing until we reach the start of the smaller string.
 
-Example: We have "((a^b)^(c^d))" and "(c^d)" we compare "(c^d)" ignoring the ending bracket by looping through the string "(c^d)".
+Example: We have `((a^b)^(c^d))` and `(c^d)` we compare `(c^d)` ignoring the ending bracket by looping through the string `(c^d)`.
 
 ---
 
@@ -46,9 +46,10 @@ By default brackets are added while comparing since we always know > will be ins
 ---
 
 ### MODUS TOLLENS
-Here if i is the current line which is "(~a)" and lineNo1 gives is a>b and lineNo2 gives "(~b)"
-We compare using "a" and "b" by removing both the negations from each of those terms and compare it with the actual statement "(a>b)"
+Here if i is the current line which is `(~a)` and lineNo1 gives is a>b and lineNo2 gives `(~b)`
+We compare using `a` and `b` by removing both the negations from each of those terms and compare it with the actual statement `(a>b)`
 
 ## Future Prospects
 
 We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future. We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity
+Infact, if we have to implement double negation elimination, then all we have to do is check if the inner statement matches with the one that comes after the elimination
