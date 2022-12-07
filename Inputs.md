@@ -80,6 +80,7 @@ c/^e1/2
 k/>e/3/6
 (a^b)/>e/4/7
 ```
+![image](https://user-images.githubusercontent.com/28446977/206088700-3b8ae5a5-5a9a-4185-b88c-3a42ed368df8.png)
 
 # Invalid Inputs
 ```
