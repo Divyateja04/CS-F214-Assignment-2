@@ -52,6 +52,12 @@ We compare using `a` and `b` by removing both the negations from each of those t
 ## Future Prospects
 
 We used C due to the fact that it's extensible and since we have to build most of the functionality from scratch we can be a lot more flexible. Since the main idea behind this program is just string comparision, We plan on extending the algorithm to double negation elimination, negation elimination and bottom elimination, which might help us verify a larger number of proofs in the coming future. We did not go towards implementing trees or anything because we thought that'll lead to a lot of space management and increase time complexity.
+
+
 Infact, if we have to implement double negation elimination, then all we have to do is check if the inner statement matches with the one that comes after the elimination.
+
+
 For negation elimination, we just check the line numbers in the current line. If the expression in one of the lines is the negation of the other, we will say that the corresponding negation elimination rule applied is correct.
+
+
 For bottom elimination, if the line number specified in the current line is a bottom, we can conclude that any expression can be written in the current line, and thus say the bottom elimination rule applied at the current line is valid.
